@@ -1,7 +1,7 @@
 <?php
 include "usefulFunctions.php";
 
-echo "Hello SindMusi!";
+echo "Bem vindo!";
 // Heroku clearDB connection information
 $cleardb_url = parse_url(getenv("CLEARDB_WHITE_URL"));
 $cleardb_server = $cleardb_url["host"];

@@ -1,7 +1,7 @@
 <?php
 include "usefulFunctions.php";
 
-echo "Hello SindMusi!
+echo "Bem vindo!
 	  <br><br>
 	  <a href='atualiza_tipos_origem.php'><b> Atualizar lista de Tipos/Origens dos Registros </b></a>";
 
