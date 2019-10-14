@@ -5,7 +5,6 @@ echo "Hello SindMusi!
 	  <br><br>
 	  <a href='atualiza_tipos_origem.php'><b> Atualizar lista de Tipos/Origens dos Registros </b></a>";
 
-
 // Heroku clearDB connection information
 $cleardb_url = parse_url(getenv("CLEARDB_WHITE_URL"));
 $cleardb_server = $cleardb_url["host"];
@@ -25,7 +24,7 @@ $active_record = TRUE;
 $max_filename_size = 203; // Tamanho máximo de nome de arquivo no Windows
 
 try{
-	$conn = new PDO("mysql:host=$cleardb_url;dbname=$cleardb_server", $cleardb_username, $cleardb_password);
+	$conn = new PDO("mysql:host=$cleardb_server;dbname=$cleardb_db", $cleardb_username, $cleardb_password);
     // set the PDO error mode to exception
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 	

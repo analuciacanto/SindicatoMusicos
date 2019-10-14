@@ -21,7 +21,7 @@ $active_record = TRUE;
 $max_filename_size = 203; // Tamanho máximo de nome de arquivo no Windows
 
 try{
-    $conn = new PDO( "mysql:host=$cleardb_url;dbname=$cleardb_server", $cleardb_username, $cleardb_password );
+    $conn = new PDO( "mysql:host=$cleardb_server;dbname=$cleardb_db", $cleardb_username, $cleardb_password );
     // set the PDO error mode to exception
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 	
