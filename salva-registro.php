@@ -2,16 +2,26 @@
 include "usefulFunctions.php";
 
 echo "Hello SindMusi!";
+// Heroku clearDB connection information
+$cleardb_url = parse_url(getenv("CLEARDB_WHITE_URL"));
+$cleardb_server = $cleardb_url["host"];
+$cleardb_username = $cleardb_url["user"]; 
+$cleardb_password = $cleardb_url["pass"];
+$cleardb_db = substr($cleardb_url["path"],1);
 
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "sindmusi";
+$active_group = 'default';
+$active_record = TRUE;
+
+// Local
+//$servername = "localhost";
+//$username = "";
+//$password = "";
+//$dbname = "sindmusi";
 
 $max_filename_size = 203; // Tamanho máximo de nome de arquivo no Windows
 
 try{
-    $conn = new PDO( "mysql:host=$servername;dbname=$dbname", $username, $password );
+    $conn = new PDO( "mysql:host=$cleardb_url;dbname=$cleardb_db", $cleardb_username, $cleardb_password );
     // set the PDO error mode to exception
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 	
