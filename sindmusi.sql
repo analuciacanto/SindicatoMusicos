@@ -1,7 +1,3 @@
-create database sindmusi;
-
-use sindmusi;
-
 create table registro(
 	id int unsigned NOT NULL AUTO_INCREMENT,
 	tipo varchar(100) NOT NULL,  -- Ata/Periódico/Registro de Empregados/...
